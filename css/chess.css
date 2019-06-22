@@ -4,6 +4,21 @@
   list-style: none;
 }
 
+h1{
+  margin: 30px 20px;
+  color: #FC2363;
+  font-weight: normal;
+  font-family: 华文楷体,sans-serif;
+}
+
+
+h2{
+  margin-left: 50px;
+  color: #FC7D0E;
+  font-weight: normal;
+  font-family: 华文楷体,sans-serif;
+}
+
 .box {
   width: 600px;
   height: 600px;
@@ -38,8 +53,8 @@
   height: 1px;
   position: absolute;
   left: 20px;
-  background: #00C1DE;
-  transform: matrix3d(-300%, 0, 0);
+  background: #2a2a2a;
+  transform: translate3d(-300%, 0, 0);
   animation: level 1s 1 linear forwards;
 }
 
@@ -48,7 +63,7 @@
   width: 1px;
   position: absolute;
   left: 20px;
-  background: #00C1DE;
+  background: #2a2a2a;
   transform: translate3d(0, -300%, 0);
   animation: down 1s 1 ease-in forwards;
 }

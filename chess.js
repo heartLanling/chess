@@ -19,13 +19,52 @@ $(function () {
         flag=!flag;
         let coords=_this.attr('id');
         if(flag){
-                black[coords]=true;
-                delete blank[coords];
-                $(this).addClass('black');
-                if(isSuccess(black,coords)>=5){
+            white[coords]=true;
+            delete blank[coords];
+            $(this).addClass('white');
+            if(isSuccess(white,coords)>=5){
+                alert('white Success');
+                box.off('click')
+            }
+            if(ai){
+                let pos=aifn();
+                black[pos]=true;
+                delete blank[pos];
+                $('#'+pos).addClass('black');
+                if(isSuccess(black,pos)>=5){
                     alert('black Success');
-                    //取消某个事件
                     box.off('click')
+                }
+                flag=!flag;
+            }
+            // black[coords]=true;
+            // delete blank[coords];
+            // $(this).addClass('black');
+            // if(isSuccess(black,coords)>=5){
+            //     alert('black Success');
+            //     //取消某个事件
+            //     box.off('click')
+            // }
+            // if(ai){
+            //     let pos=aifn();
+            //     white[pos]=true;
+            //     delete blank[pos];
+            //     $('#'+pos).addClass('white');
+            //     if(isSuccess(white,pos)>=5){
+            //         alert('white Success');
+            //         box.off('click')
+            //     }
+            //     flag=!flag;
+            // }
+        }
+        else{
+            black[coords]=true;
+            delete blank[coords];
+            $(this).addClass('black');
+            if(isSuccess(black,coords)>=5){
+                alert('black Success');
+                //取消某个事件
+                box.off('click')
             }
             if(ai){
                 let pos=aifn();
@@ -38,26 +77,24 @@ $(function () {
                 }
                 flag=!flag;
             }
-        }
-        else{
-                white[coords]=true;
-                delete blank[coords];
-                $(this).addClass('white');
-               if(isSuccess(white,coords)>=5){
-                  alert('white Success');
-                   box.off('click')
-               }
-               if(ai){
-                   let pos=aifn();
-                   black[pos]=true;
-                   delete blank[pos];
-                   $('#'+pos).addClass('black');
-                   if(isSuccess(black,pos)>=5){
-                       alert('black Success');
-                       box.off('click')
-                   }
-                   flag=!flag;
-               }
+               //  white[coords]=true;
+               //  delete blank[coords];
+               //  $(this).addClass('white');
+               // if(isSuccess(white,coords)>=5){
+               //    alert('white Success');
+               //     box.off('click')
+               // }
+               // if(ai){
+               //     let pos=aifn();
+               //     black[pos]=true;
+               //     delete blank[pos];
+               //     $('#'+pos).addClass('black');
+               //     if(isSuccess(black,pos)>=5){
+               //         alert('black Success');
+               //         box.off('click')
+               //     }
+               //     flag=!flag;
+               // }
             }
 
     });
